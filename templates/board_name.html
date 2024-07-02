@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Board Name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tableName.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Monopoly Customizer</a>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <div>
+            <h2 class="tituloNombre">Añade el nombre a tu tablero</h2>
+            <p class="explicacion">En este apartado puedes añadir el nombre principal de tu tablero de Monopoly.</p>
+        </div>
+        <div class="board-container">
+            <img src="{{ url_for('static', filename='images/tablero.jpg') }}" class="board-image" alt="Board">
+            <form method="post" id="board-name-form" class="board-name-input" action="/board-name">
+                <div class="form-group">
+                    <label for="board_name" style="color: #d61a46; font-weight: bold;"></label>
+                    <input type="text" class="form-control" id="board_name" name="board_name" required>
+                </div>
+            </form>
+            <button type="submit" form="board-name-form" class="btn btn-primary btn-siguiente">Siguiente</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

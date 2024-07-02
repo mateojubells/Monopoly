@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/customize_more.css') }}">
+
+<div class="container mt-5">
+    <h2 class="text-center" style="color: #d61a46;">Personalización Adicional de Cartas</h2>
+
+    <form method="post" action="{{ url_for('customize_more') }}" enctype="multipart/form-data" class="mt-4">
+        <!-- Estaciones -->
+        {% for i in range(4) %}
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #d61a46;">Estación {{ i+1 }}</h5>
+                <img src="{{ url_for('static', filename='images/cartas monopoly español_page-0023.jpg') }}" class="card-img-top" alt="Estación">
+                <div class="form-group">
+                    <label for="station_name_{{ i }}">Nombre de la Estación:</label>
+                    <input type="text" class="form-control" id="station_name_{{ i }}" name="station_names[]" >
+                </div>
+                <div class="form-group">
+                    <label for="station_image_{{ i }}">Imagen de la Estación:</label>
+                    <input type="file" class="form-control-file" id="station_image_{{ i }}" name="station_images[]" accept="image/*" >
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- Compañías -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #d61a46;">Compañía</h5>
+                <img src="{{ url_for('static', filename='images/cartas monopoly español_page-0027.jpg') }}" class="card-img-top" alt="Compañía">
+                <div class="form-group">
+                    <label for="company_name">Nombre de la Compañía:</label>
+                    <input type="text" class="form-control" id="company_name" name="company_name">
+                </div>
+                <div class="form-group">
+                    <label for="company_image">Imagen de la Compañía:</label>
+                    <input type="file" class="form-control-file" id="company_image" name="company_image" accept="image/*">
+                </div>
+            </div>
+        </div>
+        <!-- Compañías -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #d61a46;">Compañía</h5>
+                <img src="{{ url_for('static', filename='images/cartas monopoly español_page-0030.jpg') }}" class="card-img-top" alt="Compañía">
+                <div class="form-group">
+                    <label for="company_name">Nombre de la Compañía:</label>
+                    <input type="text" class="form-control" id="company_name" name="company_name">
+                </div>
+                <div class="form-group">
+                    <label for="company_image">Imagen de la Compañía:</label>
+                    <input type="file" class="form-control-file" id="company_image" name="company_image" accept="image/*">
+                </div>
+            </div>
+        </div>
+<br>
+        <!-- Carta de Suerte -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #d61a46;">Carta de Suerte</h5>
+                <img src="{{ url_for('static', filename='images/cartas monopoly español_page-0028.jpg') }}" class="card-img-top pilon" alt="Carta de Suerte">
+                <div class="form-group">
+                    <label for="luck_image">Imagen de la Carta de Suerte:</label>
+                    <input type="file" class="form-control-file" id="luck_image" name="luck_image" accept="image/*">
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta de Tesorería -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #d61a46;">Carta de Tesorería</h5>
+                <img src="{{ url_for('static', filename='images/cartas monopoly español_page-0029.jpg') }}" class="card-img-top pilon" alt="Carta de Tesorería">
+                <div class="form-group">
+                    <label for="treasury_image">Imagen de la Carta de Tesorería:</label>
+                    <input type="file" class="form-control-file" id="treasury_image" name="treasury_image" accept="image/*">
+                </div>
+            </div>
+        </div>
+<br>
+        <!-- Carta Personalizada -->
+        <div class="card mt-4 personalizada">
+            <div class="card-body ">
+                <h5 class="card-title" style="color: #d61a46;">Carta Personalizada</h5>
+                <div class="form-group">
+                    <label for="custom_card_image">Imagen de Carta Personalizada:</label>
+                    <input type="file" class="form-control-file" id="custom_card_image" name="custom_card_image" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="custom_card_text">Descripción o Texto Adicional:</label>
+                    <p>Si quieres añadir alguna carta personalizada en suerte o tresoreria explique en el siguiente campo sus deseos</p>
+                    <p>Indique porfavor suerte/tresoreria y a continuacion el texto que debe de tener</p>
+                    <p>Ej. Suerte - Recibes 20$ por guapo</p>
+                    <textarea class="form-control" id="custom_card_text" name="custom_card_text" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de enviar -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary">Guardar y Continuar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

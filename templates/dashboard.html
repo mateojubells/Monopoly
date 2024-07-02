@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 style="color: #d61a46; text-align: center;">Panel de Control - Tableros de Monopoly</h2>
+    
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+            <div class="list-group">
+                {% for board in boards %}
+                    <a href="{{ url_for('board_details', board_id=board[0]) }}" class="list-group-item list-group-item-action">
+                        {{ board[1] }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>¡Personalización Completada!</h2>
+<p>Has personalizado las siguientes calles:</p>
+<ul>
+    {% for street in streets %}
+    <li>{{ street }}</li>
+    {% endfor %}
+</ul>
+<a href="/" class="btn btn-primary">Volver al inicio</a>
+{% endblock %}

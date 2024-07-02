@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="board-container">
+        <h2 style="color: #d61a46; text-align: center;">Detalles del Tablero</h2>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <h3 style="color: #d61a46; text-align: center;">Nombre del Tablero</h3>
+                <h1 style="text-align: center;">{{ board[1] }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <h3 style="color: #d61a46; text-align: center;">Calles Personalizadas</h3>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {% for street in streets %}
+                            <li class="list-group-item">
+                                {{ street[2] }} - Calle {{ street[3] }}: {{ street[4] }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 style="color: #d61a46; text-align: center;">Customize Your Monopoly Board - {{ board_name }}</h2>
+<form method="post" action="/customize?board_name={{ board_name }}">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+            {% for section in sections %}
+            <div class="carousel-item {% if loop.first %}active{% endif %}">
+                <h3 style="color: #d61a46; text-align: center;">{{ section.name }} Section</h3>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        {% for street_image in section.streets %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="{{ url_for('static', filename='images/' ~ street_image) }}" class="card-img-top img-fluid" alt="{{ section.name }} - Street {{ loop.index + 1 }}">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="street_{{ section.name|replace(' ', '_') }}_{{ loop.index0 }}" style="color: #d61a46;">{{ section.name }} - Street {{ loop.index + 1 }}:</label>
+                                        <input type="text" class="form-control" id="street_{{ section.name|replace(' ', '_') }}_{{ loop.index0 }}" name="streets[{{ section.name }}][{{ loop.index0 }}]">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,84 @@
+/* customize_more.css */
+
+body {
+    padding-top: 56px;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    background-color: #f8d210; /* Similar al color amarillo de Monopoly */
+    color: #333;
+}
+
+.navbar-brand {
+    font-family: 'Monopoly', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.jumbotron {
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.3rem;
+}
+
+.btn-primary {
+    background-color: #d61a46; /* Similar al color rojo de Monopoly */
+    border-color: #d61a46;
+}
+
+.card {
+    border: 1px solid #d61a46;
+    background-color: #fff; /* Fondo blanco para las cartas */
+    margin-bottom: 20px;
+    width: calc(25% - 20px); /* 3 cartas por fila */
+    display: inline-block;
+}
+.personalizada{
+    width: 100%;
+}
+.card-img-top {
+    height: 150px;
+    object-fit: cover; /* Ajuste para que se vea la imagen completa */
+    object-position: top;
+    width: 100%;
+}
+.pilon{
+    object-position: center;
+    width: 100%;
+}
+.pilones{
+    width: 30%;
+}
+
+.card-body {
+    border-top: 2px solid #d61a46;
+    padding: 10px;
+}
+
+.card-body .form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    border: 1px solid #333;
+}
+
+h2 {
+    font-family: 'Monopoly', sans-serif;
+    color: #d61a46; /* Color rojo para los títulos */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
