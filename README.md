@@ -21,4 +21,5 @@ The project is still in its early stages. Currently, I am working on the logic f
 
 ## Technologies Used
 Python: For backend logic and customization functionalities.
+
 HTML/CSS/JavaScript (planned): For the frontend interface.
